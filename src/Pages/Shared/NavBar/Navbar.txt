@@ -1,0 +1,108 @@
+import cartIcon from "../../../assets/icon/shopping-cart-1.png";
+import profileIcon from "../../../assets/icon/profile-icon.png";
+import { Link } from "react-router-dom";
+
+const NavBar = () => {
+    const navbarItems = (
+        <>
+            <li className="lg:text-white">
+                <Link
+                    to="/home"
+                    className="lg:hover:text-[#EEFF25] font-semibold text-base 2xl:text-xl uppercase"
+                >
+                    Home
+                </Link>
+            </li>
+            <li className="lg:text-white">
+                <a className="lg:hover:text-[#EEFF25] font-semibold text-base 2xl:text-xl uppercase">
+                    Contact Us
+                </a>
+            </li>
+            <li className="lg:text-white">
+                <a className="lg:hover:text-[#EEFF25] font-semibold text-base 2xl:text-xl uppercase">
+                    Dashboard
+                </a>
+            </li>
+            <li className="lg:text-white">
+                <Link
+                    to="/menu"
+                    className="lg:hover:text-[#EEFF25] font-semibold text-base 2xl:text-xl uppercase"
+                >
+                    Our Menu
+                </Link>
+            </li>
+            <li className="lg:text-white">
+                <a className="lg:hover:text-[#EEFF25] font-semibold text-base 2xl:text-xl uppercase">
+                    Our Shop
+                </a>
+            </li>
+            <li className="lg:text-white">
+                <a className="block lg:hover:text-[#EEFF25] font-semibold text-base 2xl:text-xl uppercase">
+                    Our Shop
+                </a>
+            </li>
+            <div>
+                <img
+                    src={cartIcon}
+                    className="block w-12 rounded-full"
+                    alt=""
+                />
+            </div>
+            <li className="lg:text-white">
+                <a className="lg:hover:text-[#EEFF25] font-semibold text-base 2xl:text-xl uppercase">
+                    Sign Out
+                </a>
+            </li>
+            <div>
+                <img
+                    src={profileIcon}
+                    className="bg-white w-10 rounded-full"
+                    alt=""
+                />
+            </div>
+        </>
+    );
+    return (
+        <div className="navbar sticky lg:fixed z-10 bg-[#151515] bg-opacity-50">
+            <div className="navbar-start w-fit">
+                <div className="dropdown">
+                    <label tabIndex={0} className="btn btn-ghost lg:hidden">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-5 w-5"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="2"
+                                d="M4 6h16M4 12h8m-8 6h16"
+                            />
+                        </svg>
+                    </label>
+                    <ul
+                        tabIndex={0}
+                        className="menu menu-sm dropdown-content mt-3 z-10 p-2 shadow bg-base-100 rounded-box w-52"
+                    >
+                        {navbarItems}
+                    </ul>
+                </div>
+                <div className="normal-case text-xl lg:ml-5 text-white">
+                    <p className="title-font font-extrabold text-2xl 2xl:text-3xl">
+                        Bistro Boss
+                    </p>
+                    <p className="font-semibold text-xl 2xl:text-2xl tracking-[5.2px] 2xl:tracking-[7.3px] -mt-2">
+                        Restaurant
+                    </p>
+                </div>
+            </div>
+            <div className="navbar-end w-full hidden lg:flex">
+                <ul className="menu menu-horizontal">{navbarItems}</ul>
+            </div>
+        </div>
+    );
+};
+
+export default NavBar;

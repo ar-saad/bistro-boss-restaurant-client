@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: "Inter", sans-serif;
+}
+.title-font {
+    font-family: "Cinzel", serif;
+}
+.raleway-font {
+    font-family: "Raleway", sans-serif;
+}
