@@ -1,22 +1,8 @@
-import { useEffect, useState } from "react";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import MenuItems from "../../Shared/MenuItems/MenuItems";
 import GeneralButton from "../../../components/Buttons/GeneralButton";
 
-const PopularMenu = () => {
-    const [popularItems, setPopularItems] = useState([]);
-
-    useEffect(() => {
-        fetch("menu.json")
-            .then((res) => res.json())
-            .then((data) => {
-                const filterMenu = data.filter(
-                    (item) => item.category === "popular"
-                );
-                setPopularItems(filterMenu);
-            });
-    }, []);
-
+const MenuByCategory = () => {
     return (
         <section className="my-20">
             <SectionTitle
@@ -35,4 +21,4 @@ const PopularMenu = () => {
     );
 };
 
-export default PopularMenu;
+export default MenuByCategory;
